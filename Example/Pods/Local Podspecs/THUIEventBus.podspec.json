@@ -1,0 +1,22 @@
+{
+  "name": "THUIEventBus",
+  "version": "0.1.0",
+  "summary": "A short description of THUIEventBus.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/cocoonbud/THUIEventBus",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "cocoonbud": "yangle@thejoyrun.com"
+  },
+  "source": {
+    "git": "https://github.com/cocoonbud/THUIEventBus.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "THUIEventBus/Classes/**/*"
+}

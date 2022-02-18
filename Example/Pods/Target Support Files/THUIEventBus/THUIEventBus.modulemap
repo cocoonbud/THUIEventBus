@@ -1,0 +1,6 @@
+framework module THUIEventBus {
+  umbrella header "THUIEventBus-umbrella.h"
+
+  export *
+  module * { export * }
+}

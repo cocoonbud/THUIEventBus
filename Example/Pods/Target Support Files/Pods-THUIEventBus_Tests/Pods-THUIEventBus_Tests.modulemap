@@ -1,0 +1,6 @@
+framework module Pods_THUIEventBus_Tests {
+  umbrella header "Pods-THUIEventBus_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

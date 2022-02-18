@@ -1,0 +1,16 @@
+PODS:
+  - THUIEventBus (0.1.0)
+
+DEPENDENCIES:
+  - THUIEventBus (from `../`)
+
+EXTERNAL SOURCES:
+  THUIEventBus:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  THUIEventBus: d35e6bb076c85229a6fc278c5d326a46c9cff619
+
+PODFILE CHECKSUM: d6efa4c36630d11cb39becc87fd1f6a8e2736115
+
+COCOAPODS: 1.11.0
