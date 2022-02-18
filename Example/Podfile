@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'THUIEventBus_Example' do
+  pod 'THUIEventBus', :path => '../'
+
+  target 'THUIEventBus_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
