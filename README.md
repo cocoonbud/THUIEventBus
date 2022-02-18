@@ -22,7 +22,7 @@ pod 'THUIEventBus'
 
 ## Author
 
-cocoonbud, yangle@thejoyrun.com
+cocoonbud, cocoonbud@gmail.com
 
 ## License
 
