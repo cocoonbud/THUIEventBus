@@ -9,17 +9,16 @@
 
 @implementation THUIEventBus
 
+#pragma mark - public
 + (void)passingEventsUpwardsWithEventName:(nonnull NSString *)eventName
                                 responder:(nonnull UIResponder *)responder
                                      data:(nullable id)data
                                  callback:(void(^)(id _Nullable otherData))callback {
     if (eventName.length < 1 || !responder || ![responder isKindOfClass:[UIResponder class]]) return;
  
-    UIResponder <THUIEventBusProtocol> *curResponder = (UIResponder <THUIEventBusProtocol> *)responder.nextResponder;
+    UIResponder <THUIEventBusProtocol> *curResponder = (UIResponder <THUIEventBusProtocol> *)responder.thNextResponder;
     
-    while (curResponder
-           && ![curResponder isKindOfClass:[UIWindow class]]
-           && ![curResponder isKindOfClass:[UIApplication class]]) {
+    while (curResponder && ![curResponder isKindOfClass:[UIWindow class]] && ![curResponder isKindOfClass:[UIApplication class]]) {
         
         NSLog(@"🌺 cur responder is %@", NSStringFromClass([curResponder class]));
         
@@ -33,7 +32,7 @@
                 if (res == THUIEventResultHandleAndStop) break;
             }
         }
-        curResponder = (UIResponder <THUIEventBusProtocol> *)curResponder.nextResponder;
+        curResponder = (UIResponder <THUIEventBusProtocol> *)curResponder.thNextResponder;
     }
 }
 
@@ -44,6 +43,8 @@
     if (eventName.length < 1 || !responder || ![responder isKindOfClass:[UIResponder class]]) return;
     
     NSLog(@"🍊 cur responder is %@", NSStringFromClass([responder class]));
+    
+    THUIEventResult res = THUIEventResultIgnoreAndContinue;
             
     if ([responder isKindOfClass:[UIViewController class]]) {
         UIViewController <THUIEventBusProtocol> *responderVC = (UIViewController <THUIEventBusProtocol> *)responder;
@@ -51,7 +52,7 @@
         if ([responderVC conformsToProtocol:@protocol(THUIEventBusProtocol)]
             && [responderVC respondsToSelector:@selector(receivingDownwardPassedEventsWithEventName:data:callback:)]) {
             
-            THUIEventResult res = [responderVC receivingDownwardPassedEventsWithEventName:eventName data:data callback:callback];
+            res = [responderVC receivingDownwardPassedEventsWithEventName:eventName data:data callback:callback];
             
             if (res == THUIEventResultHandleAndStop) return;
         }
@@ -60,39 +61,36 @@
            [self passingEventsDownWithEventName:eventName responder:childVC data:data callback:callback];
         }
         
-        UIView <THUIEventBusProtocol> *view = (UIView <THUIEventBusProtocol> *)responderVC.view;
-        
-        if ([view conformsToProtocol:@protocol(THUIEventBusProtocol)]
-            && [view respondsToSelector:@selector(receivingDownwardPassedEventsWithEventName:data:callback:)]) {
-            
-            THUIEventResult res = [view receivingDownwardPassedEventsWithEventName:eventName data:data callback:callback];
-            
-            if (res == THUIEventResultHandleAndStop) return;
-        }
-        
-        for (UIView *subview in responderVC.view.subviews) {
-            [self passingEventsDownWithEventName:eventName responder:subview data:data callback:callback];
-        }
-        
-        return;
+        [THUIEventBus handleViewWithEventName:eventName responder:responderVC.view data:data callback:callback];
     }
     
     if ([responder isKindOfClass:[UIView class]]) {
-        UIView <THUIEventBusProtocol> *view = (UIView <THUIEventBusProtocol> *)responder;
-        
-        if ([view conformsToProtocol:@protocol(THUIEventBusProtocol)]
-            && [view respondsToSelector:@selector(receivingDownwardPassedEventsWithEventName:data:callback:)]) {
-            
-            THUIEventResult res = [view receivingDownwardPassedEventsWithEventName:eventName data:data callback:callback];
-            
-            if (res == THUIEventResultHandleAndStop) return;
-        }
-        
-        for (UIView *subview in view.subviews) {
-            [self passingEventsDownWithEventName:eventName responder:subview data:data callback:callback];
-        }
-        
-        return;
+        [THUIEventBus handleViewWithEventName:eventName responder:responder data:data callback:callback];
     }
 }
+
+#pragma mark - private
++ (void)handleViewWithEventName:(nonnull NSString *)eventName
+                      responder:(nonnull UIResponder *)responder
+                           data:(nullable id)data
+                       callback:(void(^)(id _Nullable otherData))callback {
+    THUIEventResult res = THUIEventResultIgnoreAndContinue;
+    
+    UIView <THUIEventBusProtocol> *view = (UIView <THUIEventBusProtocol> *)responder;
+    
+    if ([view conformsToProtocol:@protocol(THUIEventBusProtocol)]
+        && [view respondsToSelector:@selector(receivingDownwardPassedEventsWithEventName:data:callback:)]) {
+        
+        res = [view receivingDownwardPassedEventsWithEventName:eventName data:data callback:callback];
+        
+        if (res == THUIEventResultHandleAndStop) return;
+    }
+    
+    for (UIView *subview in view.subviews) {
+        [self passingEventsDownWithEventName:eventName responder:subview data:data callback:callback];
+    }
+    
+    return;
+}
 @end
+

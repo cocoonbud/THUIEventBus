@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIResponder (THUIEventBus)
 
-@property (nonatomic, weak, readonly) UIResponder *nextResponder;
+@property (nonatomic, weak, readonly) UIResponder *thNextResponder;
 
 @end
 

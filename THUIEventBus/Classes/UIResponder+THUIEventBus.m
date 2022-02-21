@@ -8,16 +8,16 @@
 #import "UIResponder+THUIEventBus.h"
 #import <objc/runtime.h>
 
-static const void *kNextResponderKey = "kNextResponderKey";
+static const void *kThNextResponderKey = "thNextResponderKey";
 
 @implementation UIResponder (THUIEventBus)
 
-- (void)setNextResponder:(UIResponder * _Nullable)nextResponder {
-    if (nextResponder) objc_setAssociatedObject(self, kNextResponderKey, nextResponder, OBJC_ASSOCIATION_COPY_NONATOMIC);
+- (void)setThNextResponder:(UIResponder * _Nullable)thNextResponder {
+    if (thNextResponder) objc_setAssociatedObject(self, kThNextResponderKey, thNextResponder, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-- (UIResponder *)nextResponder {
-    id responser = objc_getAssociatedObject(self, kNextResponderKey);
+- (UIResponder *)thNextResponder {
+    id responser = objc_getAssociatedObject(self, kThNextResponderKey);
     
     UIResponder *res = responser ? responser : nil;
     

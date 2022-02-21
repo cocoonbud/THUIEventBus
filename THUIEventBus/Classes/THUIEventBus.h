@@ -38,7 +38,7 @@ typedef NS_ENUM(NSInteger, THUIEventResult) {
 
 @interface THUIEventBus : NSObject
 
-/// subview –> (vc) –> parentView –> … –> UIWindow –> UIApplication
+/// initial view –> super view –> ….. –> view controller –> window
 
 /// Delivering events with the chain of event responders
 /// @param eventName event name
