@@ -13,9 +13,7 @@ static const void *kNextResponderKey = "kNextResponderKey";
 @implementation UIResponder (THUIEventBus)
 
 - (void)setNextResponder:(UIResponder * _Nullable)nextResponder {
-    if (nextResponder) {
-        objc_setAssociatedObject(self, kNextResponderKey, nextResponder, OBJC_ASSOCIATION_COPY_NONATOMIC);
-    }
+    if (nextResponder) objc_setAssociatedObject(self, kNextResponderKey, nextResponder, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 - (UIResponder *)nextResponder {
@@ -23,9 +21,8 @@ static const void *kNextResponderKey = "kNextResponderKey";
     
     UIResponder *res = responser ? responser : nil;
     
-    if (res) {
-        return res;
-    }
+    if (res) return res;
+    
     return self.nextResponder;
 }
 @end
