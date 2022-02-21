@@ -23,6 +23,8 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		64041008399A676E05B01DB4 /* Pods_THUIEventBus_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98D966B8A9EA054B254BB8A2 /* Pods_THUIEventBus_Example.framework */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
+		79B54CB227C3390A00E64CF0 /* SomeView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B54CAF27C3390A00E64CF0 /* SomeView2.m */; };
+		79B54CB327C3390A00E64CF0 /* SomeView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B54CB027C3390A00E64CF0 /* SomeView1.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -37,8 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0CA581A0F74FFD4B4A5E3092 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		47368DE76787C49E821D93D7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		0CA581A0F74FFD4B4A5E3092 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		47368DE76787C49E821D93D7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		587D8F1C3BA1E492128105F3 /* Pods_THUIEventBus_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_THUIEventBus_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* THUIEventBus_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = THUIEventBus_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -61,10 +63,14 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		6DA6306AED45A228ADC73ED4 /* Pods-THUIEventBus_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-THUIEventBus_Tests.debug.xcconfig"; path = "Target Support Files/Pods-THUIEventBus_Tests/Pods-THUIEventBus_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		79B54CAE27C3390A00E64CF0 /* SomeView1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomeView1.h; sourceTree = "<group>"; };
+		79B54CAF27C3390A00E64CF0 /* SomeView2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomeView2.m; sourceTree = "<group>"; };
+		79B54CB027C3390A00E64CF0 /* SomeView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomeView1.m; sourceTree = "<group>"; };
+		79B54CB127C3390A00E64CF0 /* SomeView2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomeView2.h; sourceTree = "<group>"; };
 		7A00DC97ACEAEFFBE3D755F5 /* Pods-THUIEventBus_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-THUIEventBus_Tests.release.xcconfig"; path = "Target Support Files/Pods-THUIEventBus_Tests/Pods-THUIEventBus_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		98D966B8A9EA054B254BB8A2 /* Pods_THUIEventBus_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_THUIEventBus_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E717C97AE1E0F5FE3C8274CF /* THUIEventBus.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = THUIEventBus.podspec; path = ../THUIEventBus.podspec; sourceTree = "<group>"; };
+		E717C97AE1E0F5FE3C8274CF /* THUIEventBus.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = THUIEventBus.podspec; path = ../THUIEventBus.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E9A7278F4F45620BA1CD6A9A /* Pods-THUIEventBus_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-THUIEventBus_Example.release.xcconfig"; path = "Target Support Files/Pods-THUIEventBus_Example/Pods-THUIEventBus_Example.release.xcconfig"; sourceTree = "<group>"; };
 		EEBBEE65382F3EC390DBACFF /* Pods-THUIEventBus_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-THUIEventBus_Example.debug.xcconfig"; path = "Target Support Files/Pods-THUIEventBus_Example/Pods-THUIEventBus_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +138,10 @@
 		6003F593195388D20070C39A /* Example for THUIEventBus */ = {
 			isa = PBXGroup;
 			children = (
+				79B54CAE27C3390A00E64CF0 /* SomeView1.h */,
+				79B54CB027C3390A00E64CF0 /* SomeView1.m */,
+				79B54CB127C3390A00E64CF0 /* SomeView2.h */,
+				79B54CAF27C3390A00E64CF0 /* SomeView2.m */,
 				6003F59C195388D20070C39A /* THAppDelegate.h */,
 				6003F59D195388D20070C39A /* THAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -193,7 +203,6 @@
 				6DA6306AED45A228ADC73ED4 /* Pods-THUIEventBus_Tests.debug.xcconfig */,
 				7A00DC97ACEAEFFBE3D755F5 /* Pods-THUIEventBus_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +267,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -367,6 +377,8 @@
 				6003F59E195388D20070C39A /* THAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* THViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				79B54CB227C3390A00E64CF0 /* SomeView2.m in Sources */,
+				79B54CB327C3390A00E64CF0 /* SomeView1.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
